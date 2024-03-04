@@ -103,7 +103,7 @@ func UpdateUserPhoto(context *gin.Context) {
 
 	context.IndentedJSON(http.StatusOK, gin.H{
 		"status":  200,
-		"message": "Successfully updated photo detail!",
+		"message": "Successfully updated the photo detail!",
 	})
 }
 

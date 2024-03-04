@@ -9,7 +9,7 @@ import (
 func SetupRouter() *gin.Engine {
 	route := gin.Default()
 
-	// Collection of routes for user profile
+	// Collection of routes for user profile (only to register, login, and logout)
 	route.POST("/users/register", controllers.RegisterUserAccount)
 	route.GET("/users/login", controllers.LoginUserAccount)
 	route.POST("/users/logout", controllers.LogoutUserAccount)

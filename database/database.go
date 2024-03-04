@@ -22,7 +22,7 @@ func Connect() (*gorm.DB, error) {
 	err_load := godotenv.Load()
 
 	if err_load != nil {
-		println("Error to load the .env file")
+		println("Error, can't load the .env file!")
 		return nil, err_load
 	}
 
@@ -30,7 +30,7 @@ func Connect() (*gorm.DB, error) {
 
 	db, err := gorm.Open(mysql.Open(connection), &gorm.Config{})
 	if err != nil {
-		println("Error connecting to the database")
+		println("Error, can't connect to the database!")
 		return nil, err
 	}
 

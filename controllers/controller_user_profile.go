@@ -57,7 +57,7 @@ func RegisterUserAccount(context *gin.Context) {
 	if checkEmail.Email != "" || checkUsername.Username != "" {
 		context.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
 			"status":  400,
-			"message": "Username or Email already exist!",
+			"message": "Username or Email has already exist!",
 		})
 		return
 	}
@@ -67,7 +67,7 @@ func RegisterUserAccount(context *gin.Context) {
 	if result.Error != nil {
 		context.AbortWithStatusJSON(http.StatusBadGateway, gin.H{
 			"status":  404,
-			"message": "Username or Email already exist!",
+			"message": "Username or Email has already exist!",
 		})
 		return
 	}
@@ -128,7 +128,7 @@ func LogoutUserAccount(context *gin.Context) {
 	if err != nil {
 		context.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{
 			"status":  401,
-			"message": "Unauthorized access!",
+			"message": "Unauthorized Access!",
 		})
 		return
 	}
@@ -185,7 +185,7 @@ func UpdateUserAccount(context *gin.Context) {
 	if checkEmail.Email != "" || checkUsername.Username != "" {
 		context.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
 			"status":  400,
-			"message": "Username or Email already exist!",
+			"message": "Username or Email has already exist!",
 		})
 		return
 	}
@@ -242,7 +242,7 @@ func DeleteUserAccount(context *gin.Context) {
 	context.SetCookie("Authorization", "", -1, "", "", true, true)
 	context.IndentedJSON(http.StatusOK, gin.H{
 		"status":  200,
-		"message": "Successfully delete this user account, please register or login again to continue!",
+		"message": "Successfully deleted this user account, please register or login again to continue!",
 	})
 
 }
